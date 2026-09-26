@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,10 @@
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #fafafa; /* Minimal off-white background */
-      color: #111111; /* Clean high-contrast off-black */
+      background-color: #fafafa;
+      /* Minimal off-white background */
+      color: #111111;
+      /* Clean high-contrast off-black */
       line-height: 1.6;
       display: flex;
       flex-direction: column;
@@ -24,7 +27,8 @@
 
     /* 2. Modern Black Navigation Bar Wrapper */
     .nav-wrapper {
-      background-color: #111111; /* Deep rich black */
+      background-color: #111111;
+      /* Deep rich black */
       width: 100%;
     }
 
@@ -42,7 +46,8 @@
       font-size: 1.25rem;
       font-weight: 700;
       letter-spacing: -0.03em;
-      color: #ffffff; /* Contrast white for the dark header */
+      color: #ffffff;
+      /* Contrast white for the dark header */
     }
 
     header ul {
@@ -53,7 +58,8 @@
 
     header a {
       text-decoration: none;
-      color: #aaaaaa; /* Muted gray links */
+      color: #aaaaaa;
+      /* Muted gray links */
       font-size: 0.95rem;
       font-weight: 500;
       transition: color 0.2s ease;
@@ -79,7 +85,8 @@
       margin: 0 auto;
       padding: 64px 40px;
       display: grid;
-      grid-template-columns: 1fr 1.2fr; /* Text on left, map on right */
+      grid-template-columns: 1fr 1.2fr;
+      /* Text on left, map on right */
       gap: 64px;
       align-items: center;
     }
@@ -136,11 +143,13 @@
 
     .gmap_canvas {
       width: 100%;
-      aspect-ratio: 4 / 3; /* Elegant structural block proportions */
+      aspect-ratio: 4 / 3;
+      /* Elegant structural block proportions */
       overflow: hidden;
       border-radius: 12px;
       background: #eeeeee;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03); /* Soft feather shadow */
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+      /* Soft feather shadow */
       border: 1px solid rgba(0, 0, 0, 0.04);
     }
 
@@ -168,22 +177,29 @@
     /* 7. Responsive Breakpoints */
     @media (max-width: 868px) {
       main {
-        grid-template-columns: 1fr; /* Switch to single column stack */
+        grid-template-columns: 1fr;
+        /* Switch to single column stack */
         gap: 40px;
         padding: 40px 24px;
       }
-      header, footer {
+
+      header,
+      footer {
         padding: 24px;
       }
+
       .contact-info h2 {
         font-size: 2rem;
       }
+
       .gmap_canvas {
-        aspect-ratio: 16 / 9; /* Wider banner-style proportions on mobile layouts */
+        aspect-ratio: 16 / 9;
+        /* Wider banner-style proportions on mobile layouts */
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Full-Width Black Container for Navigation -->
@@ -205,7 +221,7 @@
     <div class="contact-info">
       <h2>Get in touch.</h2>
       <p class="address-text">282 San Jose Extension, Brgy. San Isidro, Antipolo City, Rizal 1870, Philippines.</p>
-      
+
       <div class="meta-details">
         <div class="meta-row">
           <span class="meta-label">Mobile</span>
@@ -220,15 +236,12 @@
 
     <div class="mapouter">
       <div class="gmap_canvas">
-        <iframe 
-          style="border:0;" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="no-referrer-when-downgrade"
-          src="https://google.com">
+        <iframe style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed/v1/place?q=Reycreate%20Studio&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
         </iframe>
       </div>
-      <a href="https://norsumediagroup.com" target="_blank" rel="noopener noreferrer" class="gme-generated-link">Embed Map on Website for Free</a>
+      <a href="https://norsumediagroup.com" target="_blank" rel="noopener noreferrer" class="gme-generated-link">Embed
+        Map on Website for Free</a>
     </div>
   </main>
 
@@ -237,4 +250,5 @@
   </footer>
 
 </body>
+
 </html>
