@@ -21,46 +21,67 @@
 
         <!----- //* Google Map*//------>
 
-        <div class="mapouter" style="position:relative; text-align:right; 
-          Display:flex;
-          width:500px; height:450px;">
-          <div class="gmap_canvas" style="overflow:hidden; background:none!important; width:500px; height:450px;">
-            <iframe width="500px" height="450px" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed/v1/place?q=Reycreate%20Studio&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
-          </div>
-          <a href="https://norsumediagroup.com/embed-google-map-website-free" target="_blank" rel="noopener noreferrer"
-            class="gme-generated-link">Embed Map on Website for Free</a>
-          <style>
-            .mapouter {
-              position: relative;
-              text-align: right;
-            }
+        <div class="mapouter">
+  <div class="gmap_canvas">
+    <iframe 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://www.google.com/maps/embed/v1/place?q=Reycreate%20Studio&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+    </iframe>
+  </div>
+  <a href="https://norsumediagroup.com/embed-google-map-website-free" target="_blank" rel="noopener noreferrer" class="gme-generated-link">Embed Map on Website for Free</a>
 
-            .gmap_canvas {
-              overflow: hidden;
-              background: none !important;
-            }
+  <style>
+    /* The outer container controls the maximum width and centers the map */
+    .mapouter {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      width: 100%; /* Spans full width of its parent element */
+      max-width: 800px; /* Optional: stops the map from getting too wide on desktop screens */
+      margin: 0 auto; /* Centers the map container on the page */
+    }
 
-            .gmap_canvas iframe {
-              width: 100%;
-              height: 100%;
-            }
+    /* The canvas enforces a responsive aspect ratio */
+    .gmap_canvas {
+      width: 100%;
+      aspect-ratio: 16 / 9; /* Modern landscape layout for desktop/tablets */
+      overflow: hidden;
+      background: none !important;
+      border-radius: 8px; /* Optional: gives the map clean, rounded corners */
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Optional: adds a subtle modern shadow */
+    }
 
-            .mapouter a {
-              display: block;
-              font-size: 0.85em;
-              text-align: center;
-              padding: 5px 0;
-              color: #6c757d;
-              text-decoration: none;
-            }
+    /* The iframe fills 100% of the canvas dynamic sizing */
+    .gmap_canvas iframe {
+      width: 100%;
+      height: 100%;
+    }
 
-            .gme-generated-link {
-              display: none !important;
-            }
-          </style>
-        </div>
+    .mapouter a {
+      display: block;
+      font-size: 0.85em;
+      text-align: center;
+      padding: 5px 0;
+      color: #6c757d;
+      text-decoration: none;
+    }
+
+    .gme-generated-link {
+      display: none !important;
+    }
+
+    /* Mobile optimization */
+    @media (max-width: 480px) {
+      .gmap_canvas {
+        aspect-ratio: 4 / 3; /* Shifts to a squarer box so it's taller and easier to navigate on phones */
+      }
+    }
+  </style>
+</div>
+
     </ul>
   </div><!--END HEADER -->
   <p>&copy; ReyCreate Studio</p>
