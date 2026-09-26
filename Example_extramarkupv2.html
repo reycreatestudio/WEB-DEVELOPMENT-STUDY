@@ -22,9 +22,14 @@
       min-height: 100vh;
     }
 
-    /* 2. Minimal Navigation Bar */
+    /* 2. Modern Black Navigation Bar Wrapper */
+    .nav-wrapper {
+      background-color: #111111; /* Deep rich black */
+      width: 100%;
+    }
+
     header {
-      padding: 32px 40px;
+      padding: 24px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -37,6 +42,7 @@
       font-size: 1.25rem;
       font-weight: 700;
       letter-spacing: -0.03em;
+      color: #ffffff; /* Contrast white for the dark header */
     }
 
     header ul {
@@ -47,14 +53,22 @@
 
     header a {
       text-decoration: none;
-      color: #666666;
+      color: #aaaaaa; /* Muted gray links */
       font-size: 0.95rem;
       font-weight: 500;
       transition: color 0.2s ease;
     }
 
-    header a:hover, header .current-page a {
-      color: #111111;
+    /* Modern clean link hovers */
+    header a:hover {
+      color: #ffffff;
+    }
+
+    /* Active page style (White text with a subtle underline effect) */
+    header .current-page a {
+      color: #ffffff;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 4px;
     }
 
     /* 3. Layout Main Framework (Split Layout) */
@@ -63,7 +77,7 @@
       max-width: 1200px;
       width: 100%;
       margin: 0 auto;
-      padding: 40px;
+      padding: 64px 40px;
       display: grid;
       grid-template-columns: 1fr 1.2fr; /* Text on left, map on right */
       gap: 64px;
@@ -156,7 +170,7 @@
       main {
         grid-template-columns: 1fr; /* Switch to single column stack */
         gap: 40px;
-        padding: 24px;
+        padding: 40px 24px;
       }
       header, footer {
         padding: 24px;
@@ -172,17 +186,19 @@
 </head>
 <body>
 
-  <!-- Cleaner Header Construction -->
-  <header id="header">
-    <div class="logo">ReyCreate Studio</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html">Booking</a></li>
-        <li class="current-page"><a href="index.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Full-Width Black Container for Navigation -->
+  <div class="nav-wrapper">
+    <header id="header">
+      <div class="logo">ReyCreate Studio</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Booking</a></li>
+          <li class="current-page"><a href="index.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+  </div>
 
   <!-- Content & Map Split Wrapper -->
   <main>
@@ -209,10 +225,10 @@
           allowfullscreen="" 
           loading="lazy" 
           referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps/embed/v1/place?q=Reycreate%20Studio&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+          src="https://google.com">
         </iframe>
       </div>
-      <a href="https://norsumediagroup.com/embed-google-map-website-free" target="_blank" rel="noopener noreferrer" class="gme-generated-link">Embed Map on Website for Free</a>
+      <a href="https://norsumediagroup.com" target="_blank" rel="noopener noreferrer" class="gme-generated-link">Embed Map on Website for Free</a>
     </div>
   </main>
 
