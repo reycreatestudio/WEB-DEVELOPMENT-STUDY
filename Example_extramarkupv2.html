@@ -1,94 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact the ReyCreate Studio </title>
+  <title>Contact — ReyCreate Studio</title>
+  <style>
+    /* 1. Global Reset & Modern Base variables */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fafafa; /* Minimal off-white background */
+      color: #111111; /* Clean high-contrast off-black */
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* 2. Minimal Navigation Bar */
+    header {
+      padding: 32px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .logo {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    header ul {
+      display: flex;
+      list-style: none;
+      gap: 24px;
+    }
+
+    header a {
+      text-decoration: none;
+      color: #666666;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    header a:hover, header .current-page a {
+      color: #111111;
+    }
+
+    /* 3. Layout Main Framework (Split Layout) */
+    main {
+      flex: 1;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr; /* Text on left, map on right */
+      gap: 64px;
+      align-items: center;
+    }
+
+    /* 4. Left Column: Typography & Content */
+    .contact-info h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
+    }
+
+    .address-text {
+      font-size: 1.1rem;
+      color: #333333;
+      margin-bottom: 32px;
+      max-width: 400px;
+    }
+
+    .meta-details {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .meta-row {
+      font-size: 0.95rem;
+      color: #666666;
+    }
+
+    .meta-label {
+      font-weight: 600;
+      color: #111111;
+      display: inline-block;
+      width: 90px;
+    }
+
+    .meta-row a {
+      color: #111111;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      transition: border-color 0.2s ease;
+    }
+
+    .meta-row a:hover {
+      border-bottom-color: rgba(0, 0, 0, 1);
+    }
+
+    /* 5. Right Column: Fully Responsive Map Framework */
+    .mapouter {
+      position: relative;
+      width: 100%;
+    }
+
+    .gmap_canvas {
+      width: 100%;
+      aspect-ratio: 4 / 3; /* Elegant structural block proportions */
+      overflow: hidden;
+      border-radius: 12px;
+      background: #eeeeee;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03); /* Soft feather shadow */
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .gmap_canvas iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .gme-generated-link {
+      display: none !important;
+    }
+
+    /* 6. Clean Minimal Footer */
+    footer {
+      padding: 32px 40px;
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      color: #999999;
+      border-top: 1px solid #eeeeee;
+    }
+
+    /* 7. Responsive Breakpoints */
+    @media (max-width: 868px) {
+      main {
+        grid-template-columns: 1fr; /* Switch to single column stack */
+        gap: 40px;
+        padding: 24px;
+      }
+      header, footer {
+        padding: 24px;
+      }
+      .contact-info h2 {
+        font-size: 2rem;
+      }
+      .gmap_canvas {
+        aspect-ratio: 16 / 9; /* Wider banner-style proportions on mobile layouts */
+      }
+    }
+  </style>
 </head>
-
 <body>
-  <div id="header">
-    <h1>ReyCreate Studio</h1>
-    <ul>
-      <li><a href="index.html">Home</a /></li>
-      <li><a href="index.html">Booking </a /></li>
-      <li class="current-page"><a href="index.html">Contact</a /></li>
-      <div id="content">
-        <p>282 San Jose Extension Brgy. San Isidro Antipolo City,Rizal 1870,Philippines.</p>
-        <p><span class="contact">Mobile No.</span> +63 907 4819 364</p>
-        <p><span class="contact">Email: </span><a href="mailto:book@example.com" </a>reycreate.studio@gmail.com</p>
 
-        <!----- //* Google Map*//------>
+  <!-- Cleaner Header Construction -->
+  <header id="header">
+    <div class="logo">ReyCreate Studio</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Booking</a></li>
+        <li class="current-page"><a href="index.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <div class="mapouter">
-          <div class="gmap_canvas">
-            <iframe style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed/v1/place?q=Reycreate%20Studio&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
-            </iframe>
-          </div>
-          <a href="https://norsumediagroup.com/embed-google-map-website-free" target="_blank" rel="noopener noreferrer"
-            class="gme-generated-link">Embed Map on Website for Free</a>
-
-          <style>
-            /* The outer container controls the maximum width and centers the map */
-            .mapouter {
-              position: relative;
-              display: flex;
-              flex-direction: column;
-              width: 100%;
-              /* Spans full width of its parent element */
-              max-width: 800px;
-              /* Optional: stops the map from getting too wide on desktop screens */
-              margin: 0 auto;
-              /* Centers the map container on the page */
-            }
-
-            /* The canvas enforces a responsive aspect ratio */
-            .gmap_canvas {
-              width: 100%;
-              aspect-ratio: 16 / 9;
-              /* Modern landscape layout for desktop/tablets */
-              overflow: hidden;
-              background: none !important;
-              border-radius: 8px;
-              /* Optional: gives the map clean, rounded corners */
-              box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-              /* Optional: adds a subtle modern shadow */
-            }
-
-            /* The iframe fills 100% of the canvas dynamic sizing */
-            .gmap_canvas iframe {
-              width: 100%;
-              height: 100%;
-            }
-
-            .mapouter a {
-              display: block;
-              font-size: 0.85em;
-              text-align: center;
-              padding: 5px 0;
-              color: #6c757d;
-              text-decoration: none;
-            }
-
-            .gme-generated-link {
-              display: none !important;
-            }
-
-            /* Mobile optimization */
-            @media (max-width: 480px) {
-              .gmap_canvas {
-                aspect-ratio: 4 / 3;
-                /* Shifts to a squarer box so it's taller and easier to navigate on phones */
-              }
-            }
-          </style>
+  <!-- Content & Map Split Wrapper -->
+  <main>
+    <div class="contact-info">
+      <h2>Get in touch.</h2>
+      <p class="address-text">282 San Jose Extension, Brgy. San Isidro, Antipolo City, Rizal 1870, Philippines.</p>
+      
+      <div class="meta-details">
+        <div class="meta-row">
+          <span class="meta-label">Mobile</span>
+          <span>+63 907 4819 364</span>
         </div>
+        <div class="meta-row">
+          <span class="meta-label">Email</span>
+          <a href="mailto:reycreate.studio@gmail.com">reycreate.studio@gmail.com</a>
+        </div>
+      </div>
+    </div>
 
-    </ul>
-  </div><!--END HEADER -->
-  <p>&copy; ReyCreate Studio</p>
+    <div class="mapouter">
+      <div class="gmap_canvas">
+        <iframe 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed/v1/place?q=Reycreate%20Studio&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
+        </iframe>
+      </div>
+      <a href="https://norsumediagroup.com/embed-google-map-website-free" target="_blank" rel="noopener noreferrer" class="gme-generated-link">Embed Map on Website for Free</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 ReyCreate Studio. All rights reserved.</p>
+  </footer>
+
 </body>
-
 </html>
